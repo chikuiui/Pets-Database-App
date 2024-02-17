@@ -123,8 +123,10 @@ class EditorsActivity : AppCompatActivity() {
          }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_editor,menu)
+        val item = menu.findItem(R.id.action_delete)
+        if(currentPet == null)item?.isVisible = false
         return true
     }
 
